@@ -17,7 +17,7 @@ let mykey = config.SECRET_KEY;
                     let timeZone = data.timezone;
                     let temperature = data.main.temp;
                     let description = data.weather;
-                    
+
                     let weatherShow = "City Name: " + Name + " Country: " + country + " Time Zone: " + timeZone + " " + "Degrees Celcius "+ temperature + " description: " + description;
                     showWeather(weatherShow);
 
@@ -33,8 +33,8 @@ let mykey = config.SECRET_KEY;
                 .then(data => {
                     console.log(data);
                     let temp = data.list.main.temp;
-                    let description = data.list.weather.description;
-                    let weatherShow5Days = "Temperature " + temp + "Conditions " + description;
+                    let description5Days = data.list.weather.description;
+                    let weatherShow5Days = "Temperature " + temp + "Conditions " + description5Days;
                     showWeather(weatherShow5Days)
                 })
         }
@@ -47,3 +47,12 @@ let mykey = config.SECRET_KEY;
         showWeather();
 
     })
+
+    function showArray(description){
+        let arrayPrint = [];
+        for ( let i = 0; i < description.length; i++) {
+            arrayPrint += description[i];
+        }
+        console.log(arrayPrint);
+    }
+    showArray();
