@@ -16,7 +16,9 @@ let mykey = config.SECRET_KEY;
                     let country = data.sys.country;
                     let timeZone = data.timezone;
                     let temperature = data.main.temp;
-                    let weatherShow = "City Name: " + Name + " Country: " + country + " Time Zone: " + timeZone + " " + "Degrees Celcius"+ temperature;
+                    let description = data.weather;
+                    
+                    let weatherShow = "City Name: " + Name + " Country: " + country + " Time Zone: " + timeZone + " " + "Degrees Celcius "+ temperature + " description: " + description;
                     showWeather(weatherShow);
 
                 })
@@ -24,7 +26,7 @@ let mykey = config.SECRET_KEY;
         getWeather();
 
         function getWeather5Days(){
-            input = document.getElementById("input").value;
+          let input = document.getElementById("input").value;
 
             fetch("https://api.openweathermap.org/data/2.5/forecast?q="+input+"&units=metric&appid="+ mykey)
                 .then(response => response.json())
