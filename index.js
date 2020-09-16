@@ -8,7 +8,7 @@ let mykey = config.SECRET_KEY;
             const input = document.getElementById("input").value
 
 
-            fetch("https://api.openweathermap.org/data/2.5/weather?q=" + input + "&appid=" +mykey)
+            fetch("https://api.openweathermap.org/data/2.5/weather?q=" + input + "&units=metric&appid=" +mykey)
                 .then(response => response.json())
                 .then(data =>{
                     console.log(data);
@@ -18,6 +18,7 @@ let mykey = config.SECRET_KEY;
                     let temperature = data.main.temp;
                     let weatherShow = "City Name: " + Name + " City ID: " + id + " Time Zone: " + timeZone + " "+ temperature;
                     showWeather(weatherShow);
+                    
                 })
         }
         getWeather();
@@ -27,7 +28,4 @@ let mykey = config.SECRET_KEY;
         }
         showWeather();
 
-        function changeTemp(temperature){
-            //temperature =
-        }
     })
