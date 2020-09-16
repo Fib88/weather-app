@@ -13,15 +13,15 @@ let mykey = config.SECRET_KEY;
                     console.log(data);
                     let name = data.city.name;
                         console.log(name);
-                    let weatherShow5Days = name;
-                    showWeather(weatherShow5Days)
+                    let country = data.city.country;
+                        console.log(country);
+                    showWeather()
                 })
         }
         getWeather5Days();
 
-        function showWeather(weatherShow,weatherShow5Days){
-           //document.getElementById("target").innerHTML = weatherShow;
-           document.getElementById("target2").innerHTML = weatherShow5Days;
+        function showWeather(){
+           document.getElementById("target2").innerHTML = name;
         }
         showWeather();
 
