@@ -1,6 +1,6 @@
 
-var mykey = config.MY_KEY;
-var secretkey = config.SECRET_KEY;
+let mykey = config.SECRET_KEY;
+
 
     document.getElementById("run").addEventListener("click", function(){
 
