@@ -51,7 +51,7 @@ let mykey = config.SECRET_KEY;
     function showArray(description){
         let arrayPrint = [];
         for ( let i = 0; i < description.length; i++) {
-            arrayPrint += description[i];
+            arrayPrint = arrayPrint.append(description[i]);
         }
         console.log(arrayPrint);
     }
