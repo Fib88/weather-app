@@ -18,7 +18,7 @@ let mykey = config.SECRET_KEY;
                     let temperature = data.main.temp;
                     let weatherShow = "City Name: " + Name + " City ID: " + id + " Time Zone: " + timeZone + " "+ temperature;
                     showWeather(weatherShow);
-                    
+
                 })
         }
         getWeather();
