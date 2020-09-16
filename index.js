@@ -1,4 +1,6 @@
 
+var mykey = config.MY_KEY;
+var secretkey = config.SECRET_KEY;
 
     document.getElementById("run").addEventListener("click", function(){
 
@@ -6,7 +8,7 @@
             const input = document.getElementById("input").value
 
 
-            fetch("https://api.openweathermap.org/data/2.5/weather?q=" + input + "&appid=113615b9a8fe80872073f5ccfc66be36")
+            fetch("https://api.openweathermap.org/data/2.5/weather?q=" + input + "&appid=" +mykey)
                 .then(response => response.json())
                 .then(data =>{
                     console.log(data);
@@ -26,6 +28,6 @@
         showWeather();
 
         function changeTemp(temperature){
-            temperature =
+            //temperature =
         }
     })
