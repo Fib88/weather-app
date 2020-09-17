@@ -4,7 +4,7 @@ let mykey = config.SECRET_KEY;
 
     document.getElementById("run").addEventListener("click", function(){
 
-        function getWeather5Days(){
+        function getWeather5Days(data){
           let input = document.getElementById("input").value;
 
             fetch("https://api.openweathermap.org/data/2.5/forecast?q="+ input +"&units=metric&appid="+ mykey)
@@ -19,13 +19,15 @@ let mykey = config.SECRET_KEY;
                         console.log(longitude);
                     let temp = data.list;
                         console.log(temp);
-                    showWeather()
+                    let timeStamp = data.list[0].dt_txt;
+                        console.log(timeStamp);
+                    showWeather(name)
                     loopWeather(temp)
                 })
         }
         getWeather5Days();
 
-        function showWeather(){
+        function showWeather(name){
            document.getElementById("target2").innerHTML = name;
         }
         showWeather();
@@ -36,8 +38,16 @@ let mykey = config.SECRET_KEY;
           let arr = [];
           for(let i=0;i<temp.length; i++){
               console.log(temp[i].main);
+
           }
         }
+        function getTimeStamp(){
+
+                console.log()
+            }
+
+
     })
+
 
 
