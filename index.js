@@ -13,39 +13,36 @@ let mykey = config.SECRET_KEY;
                     console.log(data);
                     let name = data.city.name;
                         console.log(name);
-                    let country = data.city.country;
-                        console.log(country);
-                    let longitude = data.city.coord;
-                        console.log(longitude);
-                    let temp = data.list;
-                        console.log(temp);
                     let timeStamp = data.list[0].dt_txt;
                         console.log(timeStamp);
+                    let longitude = data.city.coord.lon;
+                        console.log(longitude);
+                    let latitude = data.city.coord.lat;
+                        console.log(latitude);
                     showWeather(name)
-                    loopWeather(temp,timeStamp)
-                    //getTimeStamps(timeStamp);
-
+                    getTimeStamps(timeStamp);
                 })
         }
+
         getWeather5Days();
 
-        function loopWeather(temp,timeStamp){
-
-          for(let i=0;i<temp.length; i++){
-              console.log(temp[i].main);
-              console.log(timeStamp);
+        function getTimeStamps(timestamp){
+          for(let i=0;i<temp.length;i++){
+              console.log(timestamp)
           }
         }
-        // function getTimeStamps(timestamp){
-        //   for(let i=0;i<data.list.length;i++){
-        //       console.log(timestamp)
-        //   }
-        // }
-
-
         function showWeather(name){
             document.getElementById("target2").innerHTML = name;
-        }
+         }
+
+         function OneCall(){
+             fetch("https://openweathermap.org/api/one-call-api"+ input +"&units=metric&appid="+ mykey)
+                 .then(response => response.json())
+                 .then(data => {
+                   console.log(data);
+                 })
+         }
+         OneCall();
     })
 
 
