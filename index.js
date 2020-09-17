@@ -35,7 +35,7 @@ let mykey = config.SECRET_KEY;
         function loopWeather(temp){
           let arr = [];
           for(let i=0;i<temp.length; i++){
-              console.log(temp[i]);
+              console.log(temp[i].main);
           }
         }
     })
