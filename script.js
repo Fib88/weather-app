@@ -80,3 +80,9 @@ document.getElementById("run").addEventListener("click", function(){
     showData();
 
 })
+
+function getWeekDay(){
+    let day = ["Monday", "Tuesday", "Wednesday","Thursday","Friday"];
+
+
+}
