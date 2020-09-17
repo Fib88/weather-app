@@ -28,39 +28,53 @@ document.getElementById("run").addEventListener("click", function(){
             let icon_day0 = data.daily[0].weather[0].icon;
             console.log(temperature_day0);
             console.log(description_day0);
-            console.log(icon_day0);
+            
             let temperature_day1 = data.daily[1].temp.day;
             let description_day1 = data.daily[1].weather[0].description;
+            let icon_day1 = data.daily[1].weather[0].icon;
             console.log(temperature_day1);
             console.log(description_day1);
             let temperature_day2 = data.daily[2].temp.day;
             let description_day2 = data.daily[2].weather[0].description;
+            let icon_day2 = data.daily[2].weather[0].icon;
             console.log(temperature_day2);
             console.log(description_day2);
             let temperature_day3 = data.daily[3].temp.day;
             let description_day3 = data.daily[3].weather[0].description;
+            let icon_day3 = data.daily[3].weather[0].icon;
             console.log(temperature_day3);
             console.log(description_day3);
             let temperature_day4 = data.daily[4].temp.day;
             let description_day4 = data.daily[4].weather[0].description;
+            let icon_day4 = data.daily[4].weather[0].icon;
+
             console.log(temperature_day4);
             console.log(description_day4);
 
             showData(temperature_day0,temperature_day1,temperature_day2,temperature_day3,temperature_day4,description_day1
-            ,description_day2,description_day3,description_day4,description_day0,icon_day0);
+            ,description_day2,description_day3,description_day4,description_day0,icon_day0,icon_day1,icon_day2,icon_day3,icon_day4);
 
            })
    }
 
 
     function showData(temperature_day0,temperature_day1,temperature_day2,temperature_day3,temperature_day4,description_day1
-        ,description_day2,description_day3,description_day4, description_day0, icon_day0){
+        ,description_day2,description_day3,description_day4, description_day0, icon_day0,icon_day1,icon_day2,icon_day3,icon_day4){
+
         document.getElementById("target0").innerHTML = Math.floor(temperature_day0) + "°C "+" " +description_day0;
         document.getElementById("icon0").src = "http://openweathermap.org/img/wn/"+icon_day0+"@2x.png"
+
         document.getElementById("target1").innerHTML = Math.floor(temperature_day1) + "°C "+" " +description_day1;
+        document.getElementById("icon1").src = "http://openweathermap.org/img/wn/"+icon_day1+"@2x.png"
+
         document.getElementById("target2").innerHTML = Math.floor(temperature_day2) + "°C "+" " +description_day2;
+        document.getElementById("icon2").src = "http://openweathermap.org/img/wn/"+icon_day2+"@2x.png"
+
         document.getElementById("target3").innerHTML = Math.floor(temperature_day3) + "°C" +" " +description_day3;
+        document.getElementById("icon3").src = "http://openweathermap.org/img/wn/"+icon_day3+"@2x.png"
+
         document.getElementById("target4").innerHTML = Math.floor(temperature_day4) + "°C"+" " +description_day4;
+        document.getElementById("icon3").src = "http://openweathermap.org/img/wn/"+icon_day4+"@2x.png"
 
     }
     showData();
