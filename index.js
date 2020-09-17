@@ -15,7 +15,12 @@ let mykey = config.SECRET_KEY;
                         console.log(name);
                     let country = data.city.country;
                         console.log(country);
+                    let longitude = data.city.coord;
+                        console.log(longitude);
+                    let temp = data.list;
+                        console.log(temp);
                     showWeather()
+                    loopWeather(temp)
                 })
         }
         getWeather5Days();
@@ -25,35 +30,14 @@ let mykey = config.SECRET_KEY;
         }
         showWeather();
 
+
+
+        function loopWeather(temp){
+          let arr = [];
+          for(let i=0;i<temp.length; i++){
+              console.log(temp[i]);
+          }
+        }
     })
 
 
-
-
-
-
-
-
-
-
-
-// function getWeather(){
-//     const input = document.getElementById("input").value
-//
-//
-// //     fetch("https://api.openweathermap.org/data/2.5/weather?q=" + input + "&units=metric&appid=" +mykey)
-// //         .then(response => response.json())
-// //         .then(data =>{
-// //             console.log(data);
-// //             let Name = data.name;
-// //             let country = data.sys.country;
-// //             let timeZone = data.timezone;
-// //             let temperature = data.main.temp;
-// //             let description = data.weather[0].description;
-// //
-// //             let weatherShow = "City Name: " + Name + " Country: " + country + " Time Zone: " + timeZone + " " + "Degrees Celcius "+ temperature + " description: " + description;
-// //             showWeather(weatherShow);
-// //
-// //         })
-// // }
-// // getWeather();
