@@ -55,7 +55,7 @@ document.getElementById("run").addEventListener("click", function(){
 
     function showData(temperature_day0,temperature_day1,temperature_day2,temperature_day3,temperature_day4,description_day1
         ,description_day2,description_day3,description_day4, description_day0, icon_day0){
-        document.getElementById("target0").innerHTML = Math.floor(temperature_day0) + "°C "+" " +description_day0 + icon_day0;
+        document.getElementById("target0").innerHTML = Math.floor(temperature_day0) + "°C "+" " +description_day0;
         document.getElementById("icon0").src = "http://openweathermap.org/img/wn/"+icon_day0+"@2x.png"
         document.getElementById("target1").innerHTML = Math.floor(temperature_day1) + "°C "+" " +description_day1;
         document.getElementById("target2").innerHTML = Math.floor(temperature_day2) + "°C "+" " +description_day2;
