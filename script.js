@@ -28,7 +28,7 @@ document.getElementById("run").addEventListener("click", function(){
             let icon_day0 = data.daily[0].weather[0].icon;
             console.log(temperature_day0);
             console.log(description_day0);
-            
+
             let temperature_day1 = data.daily[1].temp.day;
             let description_day1 = data.daily[1].weather[0].description;
             let icon_day1 = data.daily[1].weather[0].icon;
