@@ -23,9 +23,31 @@ document.getElementById("run").addEventListener("click", function(){
    .then(response => response.json())
            .then(data => {
             console.log(data)
-            
+            let temperature_day0 = data.daily[0].temp.day;
+            console.log(temperature_day0);
+            let temperature_day1 = data.daily[1].temp.day;
+            console.log(temperature_day1);
+            let temperature_day2 = data.daily[2].temp.day;
+            console.log(temperature_day2);
+            let temperature_day3 = data.daily[3].temp.day;
+            console.log(temperature_day3);
+            let temperature_day4 = data.daily[4].temp.day;
+            console.log(temperature_day4);
+
+            showData(temperature_day0,temperature_day1,temperature_day2,temperature_day3,temperature_day4);
+
            })
    }
 
+
+    function showData(temperature_day0,temperature_day1,temperature_day2,temperature_day3,temperature_day4){
+        document.getElementById("target0").innerHTML =  temperature_day0;
+        document.getElementById("target1").innerHTML = temperature_day1;
+        document.getElementById("target2").innerHTML = temperature_day2;
+        document.getElementById("target3").innerHTML = temperature_day3;
+        document.getElementById("target4").innerHTML = temperature_day4;
+
+    }
+    showData();
 
 })
