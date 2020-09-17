@@ -22,31 +22,30 @@ let mykey = config.SECRET_KEY;
                     let timeStamp = data.list[0].dt_txt;
                         console.log(timeStamp);
                     showWeather(name)
-                    loopWeather(temp)
+                    loopWeather(temp,timeStamp)
+                    //getTimeStamps(timeStamp);
+
                 })
         }
         getWeather5Days();
 
-        function showWeather(name){
-           document.getElementById("target2").innerHTML = name;
-        }
-        showWeather();
+        function loopWeather(temp,timeStamp){
 
-
-
-        function loopWeather(temp){
-          let arr = [];
           for(let i=0;i<temp.length; i++){
               console.log(temp[i].main);
-
+              console.log(timeStamp);
           }
         }
-        function getTimeStamp(){
+        // function getTimeStamps(timestamp){
+        //   for(let i=0;i<data.list.length;i++){
+        //       console.log(timestamp)
+        //   }
+        // }
 
-                console.log()
-            }
 
-
+        function showWeather(name){
+            document.getElementById("target2").innerHTML = name;
+        }
     })
 
 
