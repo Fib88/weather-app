@@ -19,10 +19,11 @@ document.getElementById("run").addEventListener("click", function(){
 
 
    function OneCall(lat,lon){
-       fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&appid=" +mykey)
+       fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&units=metric&appid=" +mykey)
    .then(response => response.json())
            .then(data => {
             console.log(data)
+            
            })
    }
 
