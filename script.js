@@ -43,7 +43,7 @@ document.getElementById("run").addEventListener("click", function(){
             let description_day4 = data.daily[4].weather[0].description;
             let icon_day4 = data.daily[4].weather[0].icon;
 
-            
+
             showData(temperature_day0,temperature_day1,temperature_day2,temperature_day3,temperature_day4,description_day1
             ,description_day2,description_day3,description_day4,description_day0,icon_day0,icon_day1,icon_day2,icon_day3,icon_day4);
 
