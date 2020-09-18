@@ -40,8 +40,9 @@ h4{
 }
 
 img{
-    padding: 10vw 2em;
+
     filter: brightness(70%);
+    padding: 5vw 2em;
 
 }
 #input{
