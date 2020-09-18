@@ -1,5 +1,5 @@
 let mykey = config.SECRET_KEY;
-
+let picKey = config.SECRET_KEY2;
 
 document.getElementById("run").addEventListener("click", function(){
     function getWeather5Days() {
@@ -93,6 +93,21 @@ function getWeekDay(){
 }
 
     getWeekDay();
+
+function BackGroundPic() {
+          let  input= document.getElementById("input").value;
+    fetch("https://api.unsplash.com/search/photos/?query="+input+"&client_id=" + picKey)
+
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            let cityPic = data.results[0].urls.regular;
+            console.log(cityPic);
+            document.getElementById("imgContainer").style.backgroundImage = cityPic.src;
+        })
+
+}
+BackGroundPic();
 
 
 
