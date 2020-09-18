@@ -26,31 +26,24 @@ document.getElementById("run").addEventListener("click", function(){
             let temperature_day0 = data.daily[0].temp.day;
             let description_day0 = data.daily[0].weather[0].description;
             let icon_day0 = data.daily[0].weather[0].icon;
-            console.log(temperature_day0);
-            console.log(description_day0);
 
             let temperature_day1 = data.daily[1].temp.day;
             let description_day1 = data.daily[1].weather[0].description;
             let icon_day1 = data.daily[1].weather[0].icon;
-            console.log(temperature_day1);
-            console.log(description_day1);
+
             let temperature_day2 = data.daily[2].temp.day;
             let description_day2 = data.daily[2].weather[0].description;
             let icon_day2 = data.daily[2].weather[0].icon;
-            console.log(temperature_day2);
-            console.log(description_day2);
+
             let temperature_day3 = data.daily[3].temp.day;
             let description_day3 = data.daily[3].weather[0].description;
             let icon_day3 = data.daily[3].weather[0].icon;
-            console.log(temperature_day3);
-            console.log(description_day3);
+
             let temperature_day4 = data.daily[4].temp.day;
             let description_day4 = data.daily[4].weather[0].description;
             let icon_day4 = data.daily[4].weather[0].icon;
 
-            console.log(temperature_day4);
-            console.log(description_day4);
-
+            
             showData(temperature_day0,temperature_day1,temperature_day2,temperature_day3,temperature_day4,description_day1
             ,description_day2,description_day3,description_day4,description_day0,icon_day0,icon_day1,icon_day2,icon_day3,icon_day4);
 
@@ -74,15 +67,33 @@ document.getElementById("run").addEventListener("click", function(){
         document.getElementById("icon3").src = "http://openweathermap.org/img/wn/"+icon_day3+"@2x.png"
 
         document.getElementById("target4").innerHTML = Math.floor(temperature_day4) + "°C"+" " +description_day4;
-        document.getElementById("icon3").src = "http://openweathermap.org/img/wn/"+icon_day4+"@2x.png"
+        document.getElementById("icon4").src = "http://openweathermap.org/img/wn/"+icon_day4+"@2x.png"
 
     }
     showData();
 
 })
 
-function getWeekDay(){
-    let day = ["Monday", "Tuesday", "Wednesday","Thursday","Friday"];
 
+function getWeekDay(){
+    //Todo option1 add one day to the date
+    let x = new Date();
+    let today = x.getDay();
+    let weekDays = ["Sunday", "Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    let tomorrow = (today)+1;
+    let twoDaysFromNow = (today)-5;
+    let threeDaysFromNow = (today)-4;
+    let fourDaysFromNow = (today)-3;
+    let fiveDaysFromNow = (today)-2;
+
+    document.getElementById("weekday2").innerHTML = weekDays[twoDaysFromNow];
+    document.getElementById("weekday3").innerHTML = weekDays[threeDaysFromNow];
+    document.getElementById("weekday4").innerHTML = weekDays[fourDaysFromNow];
 
 }
+
+    getWeekDay();
+
+
+
+
