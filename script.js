@@ -73,18 +73,25 @@ document.getElementById("run").addEventListener("click", function(){
     showData();
 
 })
-
+function getWeekDayNumber(today,x){
+    const result = today + x;
+    if(result>6){
+        return result -6;
+    }
+    return result
+}
 
 function getWeekDay(){
     //Todo option1 add one day to the date
     let x = new Date();
     let today = x.getDay();
+    console.log(today);
     let weekDays = ["Sunday", "Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    let tomorrow = (today)+1;
-    let twoDaysFromNow = (today)-5;
-    let threeDaysFromNow = (today)-4;
-    let fourDaysFromNow = (today)-3;
-    let fiveDaysFromNow = (today)-2;
+    let tomorrow = getWeekDayNumber(today,1);
+    let twoDaysFromNow = getWeekDayNumber(today,2);
+    let threeDaysFromNow = getWeekDayNumber(today,3);
+    let fourDaysFromNow = getWeekDayNumber(today,4);
+    let fiveDaysFromNow = getWeekDayNumber(today,5);
 
     document.getElementById("weekday2").innerHTML = weekDays[twoDaysFromNow];
     document.getElementById("weekday3").innerHTML = weekDays[threeDaysFromNow];
@@ -98,12 +105,10 @@ function BackGroundPic() {
           let  input= document.getElementById("input").value;
     fetch("https://api.unsplash.com/search/photos/?query="+input+"&client_id=" + picKey)
 
-        .then(response => response.json())
-        .then(data => {
+        .then(response => response.json()).then(data => {
             console.log(data);
-            let cityPic = data.results[0].urls.regular;
             console.log(cityPic);
-            document.getElementById("imgContainer").style.backgroundImage = cityPic.src;
+            document.getElementById("backgroundImage").style.backgroundImage = "url("+data.results[0].urls.regular+")";
         })
 
 }
